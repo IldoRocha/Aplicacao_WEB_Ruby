@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></h1>
+
+<h1>
+  <strong>Name:</strong>
+  <%= @resource.name %>
+</h1>
+
+<h1>
+  <strong>Occurrence:</strong>
+  <%= @resource.occurrence.name %>
+</h1>
+
+<h1>
+  <strong>Price:</strong>
+  <%= @resource.price %>
+</h1>
+
+<h1>
+  <strong>Quantity:</strong>
+  <%= @resource.quantity %>
+</h1>
+
+<%= link_to 'Edit', edit_resource_path(@resource) %> |
+<%= link_to 'Back', resources_path %>

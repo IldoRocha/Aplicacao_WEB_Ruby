@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></h1>
+
+<h1>
+  <strong>Name:</strong>
+  <%= @occurrence.name %>
+</h1>
+
+<h1>
+  <strong>State:</strong>
+  <%= @occurrence.state.name %>
+</h1>
+
+<h1>
+  <strong>Description:</strong>
+  <%= @occurrence.description %>
+</h1>
+
+<h1>
+  <strong>Cobradecode:</strong>
+  <%= @occurrence.cobradeCode %>
+</h1>
+
+<button type="button" class="btn btn-dark"><%= link_to 'Edit', edit_occurrence_path(@occurrence) %></button>
+<button type="button" class="btn btn-dark"><%= link_to 'Back', occurrences_path %></button>

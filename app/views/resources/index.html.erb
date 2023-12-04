@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Resources</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td><h4 class="text-dark">Name</h4></td>
+      <td><h4 class="text-dark">Occurrence</h4></td>
+      <td><h4 class="text-dark">Price</h4></td>
+      <td><h4 class="text-dark">Quantity</h4></td>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resources.each do |resource| %>
+      
+      <tr class="table-dark">
+        <td><h6 class="text-dark"><%= resource.name %></h6></td>
+        <td><h6 class="text-dark"><%= resource.occurrence.name %></h6></td>
+        <td><h6 class="text-dark"><%= resource.price %></h6></td>
+        <td><h6 class="text-dark"><%= resource.quantity %></h6></td>
+        <td><h6><button type="button" class="btn btn-sm btn-dark"><%= link_to 'Show', resource %></button></h6></td>
+        <td><h6><button type="button" class="btn btn-sm btn-dark"><%= link_to 'Edit', edit_resource_path(resource) %></button></h6></td>
+        <td><h6><button type="button" class="btn btn-sm btn-dark"><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></button></h6></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<a href="resources/new">
+  <button type="button" class="btn btn-dark">New Resource</button>
+</a>

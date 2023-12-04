@@ -1,0 +1,42 @@
+<br>
+<h1>Monitoramento de recursos</h1>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h3>Quantidade total de recursos: </h3>
+<br>
+<tr>
+  <% @resources.each do |resource| %>
+    <h5><%= resource.quantity + ' - ' + resource.name %></h5><br>
+  <% end %>
+</tr>
+
+<% quantities_total = 0 %>
+<% values_total = 0 %>
+
+<% @resources.each do |resource| %>
+<% quantities_total = quantities_total + resource.quantity.to_i %>
+<% values_total = values_total + (resource.price.to_i * resource.quantity.to_i) %>
+<% end %>
+<br>
+<h3>Total: <%= quantities_total %></h3>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h3>Valor total de recursos: </h3>
+<br>
+  <tr>
+    <% @resources.each do |resource| %>
+      <h5><%= resource.price + ' - ' + resource.name %></h5><br>
+    <% end %>
+  </tr> 
+<br>
+<h3>Total: <%= values_total %></h3>

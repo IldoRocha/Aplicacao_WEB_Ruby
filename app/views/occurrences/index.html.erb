@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Occurrences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td><h4 class="text-dark">Name</h4></td>
+      <td><h4 class="text-dark">Person</h4></td>
+      <td><h4 class="text-dark">State</h4></td>
+      <td><h4 class="text-dark">Description</h4></td>
+      <td><h4 class="text-dark">Cobradecode</h4></td>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @occurrences.each do |occurrence| %>
+      <tr>
+        <td><h6 class="text-dark"><%= occurrence.name %></h6></td>
+        <td><h6 class="text-dark"><%= occurrence.person.name %></h6></td>
+        <td><h6 class="text-dark"><%= occurrence.state.name %></h6></td>
+        <td><h6 class="text-dark"><%= occurrence.description %></h6></td>
+        <td><h6 class="text-dark"><%= occurrence.cobradeCode %></h6></td>
+        <td><h6><button type="button" class="btn btn-sm btn-dark"><%= link_to 'Show', occurrence %></button></h6></td>
+        <td><h6><button type="button" class="btn btn-sm btn-dark"><%= link_to 'Edit', edit_occurrence_path(occurrence) %></button></h6></td>
+        <td><h6><button type="button" class="btn btn-sm btn-dark"><%= link_to 'Destroy', occurrence, method: :delete, data: { confirm: 'Are you sure?' } %></button></h6></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<a href="occurrences/new">
+  <button type="button" class="btn btn-dark">New Occurrence</button>
+</a>
